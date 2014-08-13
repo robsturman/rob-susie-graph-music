@@ -1,0 +1,215 @@
+% tMAMguide.tex
+% v3.3 released August 2008
+
+\documentclass[]{tMAM2e}
+\renewcommand{\baselinestretch}{1.175}
+\begin{document}
+
+\doi{10.1080/1745973YYxxxxxxxx}
+ \issn{1745-9745} \issnp{1745-9737}
+
+  \jnum{00} \jyear{2008} \jmonth{January}
+
+\markboth{Taylor \& Francis and I.T. Consultant}{Journal of Mathematics and Music}
+
+%\articletype{GUIDE}
+
+\title{{\itshape A Graph-Theoretic Approach to Musical Harmony}}
+
+\author{Susie \& Rob }
+
+
+
+\maketitle
+
+\begin{abstract}
+Abstract goes here
+\end{abstract}
+
+
+
+\section{Introduction}
+
+In his book, `A Geometry of Music: Harmony and Counterpoint in the Extended Common Practice'\cite{tymoczko2011geometry}, Dmitri Tymoczko sets out what he considers to be the key components of tonality. He then uses geometrical interpretations of music theoretic relationships to explore these features and how they constrain composers who wish to create music with a sense of tonality. Here we employ the theory of graphs and complex networks as an alternative to Tymoczko's geometrical approach with the hope that it will allow us to more clearly visualise some of the complicated musical relationships he explores, and further to introduce some of our own.
+
+%Add keywords
+
+\section{Voice Leading Graphs}
+
+One of the musical techniques which is explored in depth in Tymoczko's book is the theory of `parsimonious' or `efficient' voice-leading, a notion of counterpoint which is prevalent in Western tonal music and which is frequently discussed in relation to neo-Riemannian theory. Following Tymoczko's approach, we begin with some chosen scale (or more generally, a collection of notes) and determine all possible major, minor, augmented and diminished triads which can be constructed using the notes of our collection. For the purposes of this paper we will consider the different inversions of a chord to be equivalent. We will also be utilising octave equivalence (so we are really considering pitch classes rather than pitches) and unless otherwise stated we will be working in twelve tone equal temperament. Next, we construct a mathematical graph, with each vertex representing a triad and two vertices being joined by an edge if the corresponding triads can be connected by some `efficient' voice leading. In the most basic case we consider `single-step voice leading' where we require that two notes remain unchanged and the third note may move by a single step within the scale or collection of notes in which we are working. That is, two vertices of our graph are connected precisely when the corresponding triads contain two common tones and the remaining notes are a single `scale-step' apart. Clearly this model is highly restrictive, but it serves to illustrate general principles which can then be adapted to other situations: for example we might allow more than one note to move at a time, or for one note to move by several steps. One could then produce a weighted graph (that is, assign to each edge a numerical value) in order to analyse how much movement had occured in total. It should be noted that all graphs obtained in this way will be `simple', that is they contain no loops or multiple edges, and the graphs are undirected.
+
+One of the most basic cases we considered is that of the familiar major scale. In this example our graph is identical to Tymoczko's geometrical figure. However, the interpretations are different: while Tymoczko focuses on the inherent geometrical properties of the structure, viewing it as a circle, we are interested its graph theoretic properties such as how `well connected' it is and how easily one might traverse its edges.
+
+%Insert figure Cmajor
+%* Explain labelling of triads *
+
+All of the major scales (and hence also their relative minor scales) produce these circular graphs.
+
+When we move on to more complicated examples, the differences between our approach and Tymoczko's become apparent. In A Geometry of Music the chromatic case is realised as a three dimensional object called a `twisted two torus'. %Refer to figure.
+
+%Insert figure Chromatic. Can we make it symmetrical? Or comment that it could be made so. Also not in colour?
+
+The twisted torus interpretation is clearly lost here, and at first sight the graph may appear more complicated than Tymoczko's construction. In sacrificing the geometry, though, we gain access to a multitude of tools which we can use to interpret these graphs. This model also lends itself well to those scales with various numbers of notes, for which there is not always an obvious geometrical interpretation in Tymoczko's sense.
+
+% C major +1, some of 8,9,10,11 notes for comparison? Those from presentation? Add 
+%what scales they were and a few comments.
+
+
+\section{Classical Graph Theory}
+
+To analyse these voice-leading graphs we utilise common graph-theoretic properties which then provide information on the level of harmonic choice available to composers who wish to employ these contrapuntal techniques. 
+
+Since some of the terminology in this area varies between authors, we begin with some basic definitions. Where there is no risk of ambiguity we will use juxtaposition notation, denoting an edge connecting two vertices, $u$ and $v$, by $uv$.
+
+\begin{definition}
+The \textbf{degree} of a vertex is the number of edges with that vertex as an endpoint, and a graph is said to be \textbf{regular} if all vertices have the same degree.
+\end{definition}
+
+Musically, if a voice-leading graph is regular, this tells us that the level of harmonic choice is consistent throughout. For example, the hexatonic scale known sometimes as the `symmetrical augmented' scale, which is constructed by alternating between intervals of a minor third and a semitone, produces a regular graph. %Refer to figure, each vertex has degree 3.
+
+%Figure Hexatonic
+
+It can be seen that this graph clearly resembles a cube, nicely complementing Tymoczko's approach. We further explore the properties of this graph in Section 3.1.1.
+
+\begin{definition} A graph with vertex set $\{ v_1,v_2,...,v_n \}$ can be represented by an $n \times n$ \textbf{adjacency matrix}, $A=(a_{ij})$, the entries of which are given by 
+\begin{equation}
+ a_{ij}=\begin{cases}
+    1 & \text{if there is an edge joining $v_i$ and $v_j$},\\
+    0 & \text{otherwise}.
+  \end{cases}
+\end{equation}
+\end{definition}
+
+\begin{remark}The $(i,j)$th entry of the kth power of adjacency matrix, $(A^k)_{ij}$ represents the number of walks of length k from vertex i to vertex j.
+This gives us the number of chord progressions of length k between specific pairs of triads. \end{remark}
+
+%Need to alter as don't have original definition of a graph.
+\begin{definition} Let $G$ and $G'$ be a graphs with vertex sets $V$ and $V'$ respectively. $G$ and $G'$ are \textbf{isomorphic} if there exists a bijective mapping $\theta:V\rightarrow V'$ such that for all $u$,$v\in V$, $u$ and $v$ are joined by an edge in $G$ if and only if $\theta(u)$ and $\theta(v)$ are joined by an edge in $G'$. \end{definition}
+
+\begin{remark}If two graphs are isomorphic they have the same number of vertices and edges and the same degree distribution.
+\end{remark}
+
+Graphs which are isomorphic exhibit the same structure, so when two voice-leading graphs are isomorphic this means we have the same number of available triads, and the same amount of harmonic choice available to the composer. However, two graphs may be isomorphic and contain different \textit{types} of chords as we see in the following example. The four graphs obtained by starting with a C major scale and adding, respectively, $C\sharp, D\sharp, F\sharp$ or $A\sharp$ are all isomorphic graphs on ten vertices. However, we do not have the same \textit{types} of chords: the $C \sharp$ and $D\sharp$ scales each contain an augmented triad whereas the $F\sharp$ and $A \sharp$ do not. The graph obtained by adding a $G\sharp$ to the C major scale has thirteen vertices and hence is not isomorphic to the others. In fact, the four smaller graphs are isomorphic to a subgraph of the $G\sharp$ network, implying that in some sense we simply have more harmonic choice in this scale. 
+
+%Insert figure with the C major + 1 graphs.
+
+\subsection{Traversability}
+
+Since we are primarily concerned with discovering which voice leadings are, in some sense, the most efficient, it is clearly useful to consider how one might traverse these graphs.
+
+\begin{definition} A \textbf{walk} or \textbf{edge sequence} is a sequence of vertices $v_1,v_2,...,v_{k-1},v_k$ such that $v_iv_{i+1}$ is an edge for all $1 \leq i \leq k-1$.
+\end{definition}
+
+\begin{definition} A \textbf{path} is a walk in which no vertex is repeated, except we do allow for the case where $v_1=v_k$. In this case the path is called a \textbf{circuit}.
+\end{definition}
+
+
+Walks, paths and circuits all represent chord progressions through the graphs. Paths allow each chord to be used only one within the progression, whereas walks bear no such restrictions. Circuits require the progression to begin and end on the same chord, so frequently we will consider circuits beginning on the tonic.
+
+\begin{definition}The \textbf{distance} between two vertices is defined to be the number of edges in the shortest path which connects them. 
+\end{definition}
+
+The distance between a pair of vertices can be thought of as the `size' of the voice-leading between two triads since it measures how many diatonic steps must be moved in total between the chords. Since we are primarily concerned with parsimonious voice-leading, notions of voice-leading `size' are of particular interest. Although there are various metrics used for measuring voice-leading size, as discussed by both Tymoczko\cite{tymoczko2011geometry} and Cohn\cite{cohn2012audacious}, none appears to be standard. Thus, we may reasonably adopt the graph theoretic notion of distance as our definition of voice-leading size, so long as we remain aware of the limitations of this definition. For example, we cannot recognise so-called `voice-crossings' which intuitively ought to make the voice-leading size larger. One might also wish to consider, not only diatonic length, but chromatic length, that is how many semitones have moved rather than scale-steps. This could be achieved by weighting each edge to show how much movement has occurred in terms of semitones. This would then allow for the same graph theoretic analysis, but using the analogous tools designed for weighted graphs.
+
+\begin{definition} The \textbf{diameter} of $G$ is the greatest distance between any two vertices of $G$. 
+\end{definition}
+
+The diameter can be thought of as representing the maximum amount of movement that must occur to create a voice-leading between any two triads. This gives us a fairly crude first impression of how difficult our graph is to traverse, which we can then refine using some very well-known tools from graph theory. The next section discusses Hamiltonian paths and circuits, which relate closely to one of the most famous and computationally expensive extant problems of computer science: the Travelling Salesperson Problem. We then look at Eulerian trails, discussed by the eponymous Euler in his solution to the Bridges of K\"{o}nigsberg problem, the solution of which is arguably the oldest theorem of graph theory.
+
+\subsubsection{Hamiltonian Circuits}
+
+\begin{definition} A Hamiltonian circuit is a circuit which visits every vertex of a graph.\end{definition}
+
+A Hamiltonian circuit represents a voice-leading in which every available triad is used precisely once. Although this is clearly incredibly restrictive, the principle could potentially be used by a composer within the context of a larger piece.
+
+Consider once more the graph of the hexatonic scale shown in figure (?). This graph contains no less than 12 Hamiltonian circuits and 144 Hamiltonian paths. Due to the relationship between this graph and the cube, its properties have been explored in depth, but in general it is non trivial to discover whether a graph contains a Hamiltonian path or circuit, since these are both NP-complete problems.
+
+%Number of circuits and paths from Wolfram  
+%Weisstein, Eric W. "Cubical Graph." From MathWorld--A Wolfram Web Resource. http://mathworld.wolfram.com/CubicalGraph.html 
+
+\subsubsection{Eulerian Trails}
+
+\begin{definition} An \textbf{Eulerian trail} begins and ends with the same vertex and uses each edge of a graph precisely once, but may repeat vertices.
+\end{definition}
+
+\begin{definition} A \textbf{semi-Eulerian trail} is like an Eulerian trail except that it begins and ends on different vertices.
+\end{definition}
+
+\begin{definition} A graph is called \textbf{Eulerian} if it contains an Eulerian trail and \textbf{semi-Eulerian} if it contains a semi-Eulerian trail but not an Eulerian trail.
+\end{definition}
+
+Here we are interested in using all the various chord progressions once rather than all the chords themselves. Since the graphs we are considering are undirected we would be able to move in either direction between a pair of chords, but then we would not be able to use the reverse progression within the same Eulerian trail.
+
+It is a well known, and very useful fact that a graph is Eulerian if and only if every vertex has even degree. It is semi-Eulerian if precisely two vertices of the graph have odd degree. In contrast with Hamiltonicity, this makes it very easy to tell whether a graph is Eulerian. However actually finding Eulerian trails, and in particular, evaluating the number of Eulerian trails within a graph is certainly non-trivial.
+
+The `symmetric diminished scale', sometimes referred to simply as the `octatonic scale', is constructed by alternating between intervals of a semitone and a whole tone. This scale produces a beautiful graph which reflects the internal symmetry of the scale which its name implies. The graph is Eulerian 
+%check if also ham.
+It would be fascinating to analyse famous works to see if and when composers actually make use of these relationships.
+
+%Figure Octatonic
+
+
+\subsection{Planarity}
+
+\begin{definition}
+A graph is \textbf{planar} if it can be embedded in the plane in such a way that there are no edge crossings.
+\end{definition}
+
+One potential benefit of our model is the ability to represent the graphs on a 2-dimensional page, a property which becomes useful when considering chords with more than three notes. Tymoczko's model requires a transition into higher dimensions, with an additional dimension for each note of the chord, whereas we could just as easily create graphs representing chords containing four or more notes. In fact, we can say more: many of the graphs considered so far are planar. It is easy to see that this is true of the major scales and both the hexatonic and octatonic examples. It would be very interesting to ask whether this is still true of any of the graphs if we consider chords with, say, four notes.
+
+\subsection{Connectedness}
+
+One question we considered is that of how well connected our graphs are. This turns out to be somewhat problematic since most, if not all, of the standard tools for measuring `connectivity' depend, to some degree, on the number of vertices of the graph. Interestingly this seems to be true even of many measures which claim to be ‘normalised’ to avoid such issues. This makes comparison between graphs difficult, especially as scales with the same number of notes may produce graphs with different numbers of vertices. We can thus move our attention towards more specific measures such as ‘communicability’ and ‘centrality’ which focus on the properties of the individual vertices of a graph.
+
+%need to make some reference with respect to 'normalised' ones?
+
+\section{Complex Networks}
+
+Complex network theory is a modern, vibrant area of study which seeks to analyse graphs which represent, among other things, social networks and computer networks. Such graphs, or networks, are typically gargantuan in size, and display highly complex, and often dynamic, structures. Because of this, many tools have been developed which aim to concisely distill information about both the individual vertices and the network as a whole. Though our graphs are miniscule compared to a typical complex network, many of these tools can still be applied effectively.
+
+Measures of \textit{centrality} determine how `important' a certain vertex is within a network. Such measures include \textit{Katz centrality} and \textit{betweenness centrality}, as defined below. These are of interest since musically we may be wish to study which triads play the most important roles within a scale: which are used most frequently in various harmonic progressions. It would also be very interesting to consider how our theoretical results relate to the actual usage in compositions, by analysing a large number of pieces to see when and where each triad occurs. This is something we hope to be able to explore in the future.
+
+\begin{definition}
+Given a network, the Katz centrality of a vertex i is given by $$K(i)=\sum_1^\infty \sum_1^n \alpha^k (A^k)_{ji}$$
+where n is the number of vertices in the network, A is the adjacency matrix and $\alpha$ is an attenuation factor which specifies the relative significance to be placed on nearby neighbours within a graph, as opposed to those which are further away. To ensure that the sum converges, $\alpha$ must be smaller than the reciprocal of the largest eigenvalue of A.
+\end{definition}
+
+%(How) Does one reference such things? This is as written on wikipedia. Comparable to on networkx but written differently.
+
+As a small example we can look at the graph representing the C harmonic minor scale. Since the Katz centrality values represent relative importance, it is not the magnitudes of the values themselves that we are concerned with, but rather in how they compare to each other. It can be seen, for example, that although the F diminished and D diminished vertices both have degree two, the F diminished vertex has a much higher value. This gives an insight into how Katz centrality works: in terms of social network analysis this effect is often described as `it's not how many friends you have, but how influential your friends are.'
+
+%How to include the values? Table?
+%Add figure C harmonic minor (check numbers) 
+
+It is interesting, from a musical perspective, to note that the C minor triad has a relatively low value, which is perhaps not what one would expect. This suggests that a more suitable tool to employ might be a weighted version of Katz centrality, which allows an initial value to be associated to one or more vertices deemed to be of special significance within the network. In these voice leading graphs we might choose to add weight to those vertices which represent triads containing the tonic note. We can then consider how these alterations affect the neighbouring vertices and how the network changes as a whole. These changes might prove more significant if we considered equal temperaments with more notes per octave. Since the theory for cases other than 12-tet is less well developed this could provide useful insight into which chords, scales and modes are the most relevant to composers working within these temperaments. 
+
+There is also a related notion of \textit{betweenness centrality} which is interested in paths which pass through a given vertex. Musically this may be of interest, since we might want to know, not just which chords are deemed to be the most significant in some sense, but also which triads frequently act as musical stepping stones between others in voice-leading.
+
+\begin{definition}The betweenness centrality of a given vertex, v, is the proportion of shortest paths in the graph which pass through v.\cite{brandes2001faster}
+\end{definition}
+
+When calculating the betweenness centrality of the C harmonic minor graph, the unexpectedly low value of the C minor chord is even more pronounced than in the Katz centrality case. Here C minor has the lowest value of any of the triads with F diminished and A$\flat$ diminished having only a slightly larger value. This speaks to the fact that we might be more likely to use the C minor chord at the beginning of end of a chord progression, rather than in the middle.
+%Better more musical way of phrasing this?
+
+
+As an alternative to looking at individual chords, we can consider how well specific pairs of vertices `communicate' with each other.
+
+\begin{definition}Let $P_{uv}^{(s)}$ be the number of shortest paths between $u$ and $v$ with length s and let $W_{uv}^{(k)}$ be the number of walks between $u$ and $v$ with length $k>s$. The \textit{communicability} \cite{estrada2008communicability} between two vertices, $u$ and $v$, is
+
+$$C_{uv}=\frac{1}{s!}P_{uv}+\sum_{k>s}\frac{1}{k!}W_{uv}^{(k)}.$$
+
+\end{definition}
+
+This measure considers all routes between $u$ and $v$, with shorter routes being weighted more heavily than longer ones. The communicability of a pair of vertices then captures the idea of how easy it is to move between these two vertices.
+
+Since the $k$th power of the adjacency matrix represents the number of walks of length $k$ between each pair of vertices, this expression for communicability can be rewritten as $$C_{uv}=\sum_{k=0}^{\infty}\frac{(A^k)_{uv}}{k!}=e^A.$$
+
+Again we can consider the C harmonic minor example. We see that although F minor and A$\flat$ minor are both a distance of two away from the C minor triad, the pair C minor and F minor have a communicability value of 0.998 whereas the pair C minor and A$\flat$ minor score 1.859. It is also interesting to consider the values when each vertex is paired with itself. In this case the A$\flat$ minor vertex has the highest value, at 4.500 and B diminished and D diminished having the lowest values at 2.343. This agrees with our intuition, since the more isolated nature of these two vertices means that a smaller proportion of walks (or chord progressions) will use these vertices. 
+\section{Conclusion and Extensions}
+
+There are many other notions from both graph theory and complex network theory which we can employ to discover more about the properties of these graphs. Complex network theory, in particular, is a growing area so there are a potentially increasing number of new tools which we can incorporate into our study. There are also many variations to the graphs that we could consider, for example creating directed graphs, which allow us to specify in which direction we can move between each pair of chords. We could also look at weighting our graphs, as mentioned before, to give us greater insight into notions of voice-leading size. Many of the graph theoretic tools we have employed have direct analogues for weighted and directed graphs so the analysis would not prove too difficult in these cases. Perhaps it might even be possible to create dynamic graphs which change over time to represent the idea of changing key signatures throughout a piece. This would lend itself nicely to the idea of using these graphs as a means of analysing large catalogues of music to see what musical relationships occur and how these relate to the theoretical ideas we have discussed. We can also look at different chords with more than three notes, or at different harmonic frameworks, such as different equal temperaments, or perhaps even non equal temperaments. These graphs will then hopefully provide both a useful visual reference for composers and a novel means of analysis.
+
+\bibliographystyle{plain}
+\bibliography{musicbib}
+
+\end{document}
