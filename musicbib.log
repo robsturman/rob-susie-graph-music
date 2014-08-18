@@ -1,0 +1,63 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdftex 2012.11.4)  18 JUL 2014 14:25
+entering extended mode
+**C:/Users/Susannah/Dropbox/WIXEY/WORDS/musicbib.bib
+(C:/Users/Susannah/Dropbox/WIXEY/WORDS/musicbib.bib
+Overfull \hbox (3.49614pt too wide) in paragraph at lines 19--29
+\tenrm Quinn, Ian and Ty-moczko, Dmitri, jour-nal=Science, vol-ume=320, num-ber
+=5874, pages=346--348, year=2008,|
+
+\hbox(6.94444+1.94444)x469.75499, glue set - 1.0
+.\tenrm Q
+.\tenrm u
+.\tenrm i
+.\tenrm n
+.\tenrm n
+.etc.
+
+
+Overfull \hbox (14.3987pt too wide) in paragraph at lines 31--41
+[]\tenrm @articlehall2008geometrical, ti-tle=Geometrical Mu-sic The-ory, au-tho
+r=Hall, Rachel Wells, jour-nal=Science,|
+
+\hbox(6.94444+1.94444)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm @
+.\tenrm a
+.\tenrm r
+.\tenrm t
+.etc.
+
+
+Overfull \hbox (17.96826pt too wide) in paragraph at lines 54--64
+[]\tenrm @articleestrada2008communicability, ti-tle=Communicability in com-plex
+ net-works, au-thor=Estrada, Ernesto|
+
+\hbox(6.94444+1.94444)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm @
+.\tenrm a
+.\tenrm r
+.\tenrm t
+.etc.
+
+
+Overfull \hbox (37.35713pt too wide) in paragraph at lines 65--75
+[]\tenrm @articleestrada2009communicability, ti-tle=Communicability be-tween-ne
+ss in com-plex net-works, au-thor=Estrada,|
+
+\hbox(6.94444+1.94444)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm @
+.\tenrm a
+.\tenrm r
+.\tenrm t
+.etc.
+
+)
+*
+! Emergency stop.
+<*> ...s/Susannah/Dropbox/WIXEY/WORDS/musicbib.bib
+                                                  
+End of file on the terminal!
+
+!  ==> Fatal error occurred, no output PDF file produced!

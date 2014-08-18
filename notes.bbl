@@ -1,0 +1,25 @@
+\begin{thebibliography}{1}
+
+\bibitem{brandes2001faster}
+Ulrik Brandes.
+\newblock A faster algorithm for betweenness centrality*.
+\newblock {\em Journal of Mathematical Sociology}, 25(2):163--177, 2001.
+
+\bibitem{cohn2012audacious}
+Richard Cohn.
+\newblock {\em Audacious Euphony: Chromatic Harmony and the Triad's Second
+  Nature}.
+\newblock Oxford University Press, 2012.
+
+\bibitem{estrada2008communicability}
+Ernesto Estrada and Naomichi Hatano.
+\newblock Communicability in complex networks.
+\newblock {\em Physical Review E}, 77(3):036111, 2008.
+
+\bibitem{tymoczko2011geometry}
+Dmitri Tymoczko.
+\newblock {\em A geometry of music: Harmony and counterpoint in the extended
+  common practice}.
+\newblock OUP USA, 2011.
+
+\end{thebibliography}

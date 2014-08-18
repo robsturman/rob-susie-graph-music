@@ -1,0 +1,14 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdftex 2012.11.4)  14 JUN 2013 11:00
+entering extended mode
+**C:/Users/Susannah/Dropbox/WIXEY/WORDS/amsbsy.sty
+(C:/Users/Susannah/Dropbox/WIXEY/WORDS/amsbsy.sty
+! Undefined control sequence.
+l.50 \NeedsTeXFormat
+                    {LaTeX2e}% LaTeX 2.09 can't be used (nor non-LaTeX)
+? 
+! Emergency stop.
+l.50 \NeedsTeXFormat
+                    {LaTeX2e}% LaTeX 2.09 can't be used (nor non-LaTeX)
+End of file on the terminal!
+
+!  ==> Fatal error occurred, no output PDF file produced!
